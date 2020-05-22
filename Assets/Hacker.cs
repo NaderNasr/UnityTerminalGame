@@ -11,6 +11,10 @@ public class Hacker : MonoBehaviour {
     Screen currentScreen;
     string password;
 
+    //Game passwords
+    string[] level1_Pass = { "books", "study", "read", "letters" };
+    string[] level2_Pass = { "theif", "jail", "sirens", "red", "blue"};
+
 
     // Use this for initialization
     void Start () {
@@ -55,14 +59,14 @@ public class Hacker : MonoBehaviour {
         if (input == "1")
         {
             level = 1;
-            password = "donkey";
+            password = level1_Pass[2];
             StartGame(1);
 
         }
         else if (input == "2")
         {
             level = 2;
-            password = "government";
+            password = level2_Pass[];
             StartGame(2);
         }
         else if (input == "3")
