@@ -56,25 +56,16 @@ public class Hacker : MonoBehaviour {
 
     void RunMainMenu(string input)
     {
-        if (input == "1")
-        {
-            level = 1;
-            password = level1_Pass[2];
-            StartGame(1);
 
-        }
-        else if (input == "2")
+        bool isValid = ( input == "1" || input == "2" || input == "3" );
+
+        if(isValid)
         {
-            level = 2;
-            password = level2_Pass[];
-            StartGame(2);
+            level = int.Parse(input);
+            StartGame();
         }
-        else if (input == "3")
-        {
-            level = 3;
-            StartGame(3);
-        }
-        else if (input == "007")
+       
+        else if (input == "007") // easter egg
         {
             Terminal.WriteLine("Choose the correct level Mr. Bond");
         }
@@ -84,10 +75,25 @@ public class Hacker : MonoBehaviour {
         }
     }
 
-    void StartGame(int level)
+    void StartGame()
     {
         currentScreen = Screen.Password;
-        Terminal.WriteLine("Welcome to level " + level);
+        Terminal.ClearScreen();
+
+        switch (level) // CLEAN UPPPP
+        {
+            case 1:
+                password = level1_Pass[0];
+                break;
+            case 2:
+                password = level2_Pass[3];
+                break;
+            default:
+                
+                Debug.LogError("Invalid NUMBER");
+                break;
+        }
+
         Terminal.WriteLine("Please type the password:");
     }
 
