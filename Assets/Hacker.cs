@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 public class Hacker : MonoBehaviour {
@@ -83,10 +81,10 @@ public class Hacker : MonoBehaviour {
         switch (level) // CLEAN UPPPP
         {
             case 1:
-                password = level1_Pass[0];
+                password = level1_Pass[Random.Range(0, level1_Pass.Length)];
                 break;
             case 2:
-                password = level2_Pass[3];
+                password = level2_Pass[Random.Range(0, level2_Pass.Length)];
                 break;
             default:
                 
